@@ -151,28 +151,37 @@ function AutoresForm({del}){
       <form id="formulario" className="needs-validation" noValidate>
         <div className="form-group mt-2">
           <label className="form-label">Nombre:</label>
-          <input className="form-control" required type="text" value = {nombre} onChange = {(e) => setNombre(e.target.value)} disabled = {del === true ? true : ""} />
+          <input className="form-control" required type="text" 
+            value = {nombre} onChange = {(e) => setNombre(e.target.value)} disabled = {del === true ? true : ""} />
           <div className="valid-feedback">Looks good!</div>
           <div className="invalid-feedback">Complete el campo</div>
         </div>
 
         <div className="form-group mt-2">
           <label className="form-label">Apellido:</label>
-          <input className="form-control" required type="text" value = {apellido} onChange = {(e) => setApellido(e.target.value)} disabled = {del === true ? true : ""} />
+          <input className="form-control" required type="text" 
+            value = {apellido} onChange = {(e) => setApellido(e.target.value)} disabled = {del === true ? true : ""} />
           <div className="valid-feedback">Looks good!</div>
           <div className="invalid-feedback">Complete el campo</div>
         </div>
 
         <div className="form-group mt-2">
           <label className="form-label">País de origen:</label>
-          <input className="form-control" required type="text" value = {pais} onChange = {(e) => setPais(e.target.value)} disabled = {del === true ? true : ""}/>
+          <input className="form-control" required type="text" 
+            value = {pais} onChange = {(e) => setPais(e.target.value)} disabled = {del === true ? true : ""}/>
           <div className="valid-feedback">Looks good!</div>
           <div className="invalid-feedback">Complete el campo</div>
         </div>
 
         <div className="form-group">
-          <button className={`btn btn-${id === undefined ? "success" : del !== true ? "primary" : "danger"}`} onClick={(e) => enviar(e)}>{id === undefined ? "Guardar" : del !== true ? "Edit"  : "Delete" }</button>
-          <button className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => navigate("/autores")}>Cancelar</button>
+          <button 
+            className={`btn btn-${id === undefined ? "success" : del !== true ? "primary" : "danger"}`} 
+            onClick={(e) => enviar(e)}>{id === undefined ? "Guardar" : del !== true ? "Edit"  : "Delete" }
+          </button>
+          <button 
+            className="btn btn-secondary" data-bs-dismiss="modal" 
+            onClick={() => navigate("/autores")}>Cancelar
+          </button>
         </div>
       </form>
     </div>
